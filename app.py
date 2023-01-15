@@ -9,16 +9,17 @@ import pickle
 app = Flask(__name__)
 model = pickle.load(open("model.pkl", "rb"))
 
-app.config['SQLALCHEMY_DATABASE_URI'] = "mysql://root:admin@172.19.0.2:3306/skripsi"
+app.config['SQLALCHEMY_DATABASE_URI'] = "mysql://root:@localhost:3306/dataprediksi"
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db = SQLAlchemy(app)
 
-db.create_all()
+# db.create_all()
 
 class DataPrediksi(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     nama = db.Column(db.String(30), nullable=False)
+    layak = db.Column(db.String(20), nullable=False)
     alamat = db.Column(db.String(50), nullable=False)
     jenis_pmks = db.Column(db.Integer, nullable=False)
     hubungan_dlm_keluarga = db.Column(db.Integer, nullable=False)
@@ -54,6 +55,7 @@ def predict():
         pendapatan_keluarga=data("pendapatan_keluarga"),
         status_rumah=data("status_rumah"),
         pekerjaan=data("pekerjaan"),
+        layak=prediction
     )
 
     db.session.add(populate_data)

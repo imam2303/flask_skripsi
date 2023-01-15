@@ -1,7 +1,6 @@
 asgiref 
 async
 Babel 
-backports
 certifi 
 click 
 colorama 
@@ -31,11 +30,8 @@ pathtools
 Pillow 
 platformdirs 
 pyparsing 
-python
-python
 pytz 
 PyYAML 
-scikit
 scipy 
 seaborn 
 six 
@@ -46,3 +42,5 @@ typing_extensions
 virtualenv 
 watchdog 
 Werkzeug 
+scikit-learn
+flask_sqlalchemy
