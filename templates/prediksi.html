@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+  <!--From https://codepen.io/frytyler/pen/EGdtg-->
+  <head>
+    <meta charset="UTF-8" />
+    <title>Flower Class Prediction</title>
+    <link
+      href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+      rel="stylesheet"
+      id="bootstrap-css"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+  
+  <body>
+    <div class="container contact-form">
+      <div class="contact-image">
+        <img src="https://image.ibb.co/kUagtU/rocket_contact.png" alt="rocket_contact"/>
+      </div>
+      <form action="{{ url_for('predict')}}" method="post">
+        <h3>PMKS Prediction</h3>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <input
+                type="text"
+                name="jenis_pmks"
+                class="form-control"
+                placeholder="jenis_pmks"
+                required="required"
+              />
+            </div>
+            <div class="form-group">
+              <input
+                type="text"
+                name="hubungan_dlm_keluarga"
+                class="form-control"
+                placeholder="hubungan_dlm_keluarga"
+                required="required"
+              />
+            </div>
+            <div class="form-group">
+              <input
+                type="text"
+                name="jml_tanggungan_kepala_keluarga"
+                class="form-control"
+                placeholder="jml_tanggungan_kepala_keluarga"
+                required="required"
+              />
+            </div>
+            <div class="form-group">
+              <input
+                type="text"
+                name="pendapatan_keluarga"
+                class="form-control"
+                placeholder="pendapatan_keluarga"
+                required="required"
+              />
+            </div>
+            <div class="form-group">
+                <input
+                  type="text"
+                  name="status_rumah"
+                  class="form-control"
+                  placeholder="status_rumah"
+                  required="required"
+                />
+            </div>
+            <div class="form-group">
+              <input
+                type="text"
+                name="pekerjaan"
+                class="form-control"
+                placeholder="pekerjaan"
+                required="required"
+              />
+            </div>
+            <button type="submit" class="btn btn-primary btn-block btn-large">
+              Predict
+            </button>
+          </div>
+          <div class="col-md-6">
+            <h3>
+              Hasil Prediksi : <br />
+              {{ prediction_text }}
+            </h3>
+          </div>
+        </div>
+      </form>
+    </div>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  </body>
+</html>
