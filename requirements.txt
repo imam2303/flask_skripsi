@@ -1,48 +1,48 @@
-asgiref @ file:///build/source/dist/asgiref-3.5.2-py3-none-any.whl
-async-timeout @ file:///build/async-timeout-4.0.2/dist/async_timeout-4.0.2-py3-none-any.whl
-Babel @ file:///build/Babel-2.11.0/dist/Babel-2.11.0-py3-none-any.whl
-backports.entry-points-selectable @ file:///build/backports.entry_points_selectable-1.2.0/dist/backports.entry_points_selectable-1.2.0-py3-none-any.whl
-certifi @ file:///build/source/dist/certifi-2022.12.7-py3-none-any.whl
-click @ file:///build/click-8.1.3/dist/click-8.1.3-py3-none-any.whl
-colorama @ file:///build/colorama-0.4.6/dist/colorama-0.4.6-py2.py3-none-any.whl
-cycler @ file:///build/cycler-0.11.0/dist/cycler-0.11.0-py3-none-any.whl
-defusedxml @ file:///build/defusedxml-0.7.1/dist/defusedxml-0.7.1-py2.py3-none-any.whl
-distlib @ file:///build/distlib-0.3.6/dist/distlib-0.3.6-py2.py3-none-any.whl
-filelock @ file:///build/filelock-3.8.0/dist/filelock-3.8.0-py3-none-any.whl
-Flask @ file:///build/Flask-2.2.2/dist/Flask-2.2.2-py3-none-any.whl
-Flask-SQLAlchemy @ file:///build/Flask-SQLAlchemy-2.5.1/dist/Flask_SQLAlchemy-2.5.1-py2.py3-none-any.whl
-fonttools @ file:///build/source/dist/fonttools-4.34.4-py3-none-any.whl
-greenlet @ file:///build/greenlet-1.1.3/dist/greenlet-1.1.3-cp310-cp310-linux_x86_64.whl
-itsdangerous @ file:///build/itsdangerous-2.1.2/dist/itsdangerous-2.1.2-py3-none-any.whl
-Jinja2 @ file:///build/Jinja2-3.1.2/dist/Jinja2-3.1.2-py3-none-any.whl
-joblib @ file:///build/joblib-1.2.0/dist/joblib-1.2.0-py3-none-any.whl
-kiwisolver @ file:///build/kiwisolver-1.4.4/dist/kiwisolver-1.4.4-cp310-cp310-linux_x86_64.whl
-lz4 @ file:///build/source/dist/lz4-4.0.1-cp310-cp310-linux_x86_64.whl
-mariadb @ file:///build/mariadb-1.1.4/dist/mariadb-1.1.4-cp310-cp310-linux_x86_64.whl
-MarkupSafe @ file:///build/MarkupSafe-2.1.1/dist/MarkupSafe-2.1.1-cp310-cp310-linux_x86_64.whl
-matplotlib @ file:///build/matplotlib-3.5.3/dist/matplotlib-3.5.3-cp310-cp310-linux_x86_64.whl
-mock @ file:///build/mock-4.0.3/dist/mock-4.0.3-py3-none-any.whl
-mysqlclient @ file:///build/mysqlclient-2.1.1/dist/mysqlclient-2.1.1-cp310-cp310-linux_x86_64.whl
-numpy @ file:///build/numpy-1.23.3/dist/numpy-1.23.3-cp310-cp310-linux_x86_64.whl
-olefile @ file:///build/olefile-0.46/dist/olefile-0.46-py2.py3-none-any.whl
-packaging @ file:///build/packaging-21.3/dist/packaging-21.3-py3-none-any.whl
-pandas @ file:///build/pandas-1.4.4/dist/pandas-1.4.4-cp310-cp310-linux_x86_64.whl
-pathtools @ file:///build/pathtools-0.1.2/dist/pathtools-0.1.2-py3-none-any.whl
-Pillow @ file:///build/Pillow-9.3.0/dist/Pillow-9.3.0-cp310-cp310-linux_x86_64.whl
-platformdirs @ file:///build/source/dist/platformdirs-2.5.3-py3-none-any.whl
-pyparsing @ file:///build/source/dist/pyparsing-3.0.9-py3-none-any.whl
-python-dateutil @ file:///build/python-dateutil-2.8.2/dist/python_dateutil-2.8.2-py2.py3-none-any.whl
-python-dotenv @ file:///build/python-dotenv-0.21.0/dist/python_dotenv-0.21.0-py3-none-any.whl
-pytz @ file:///build/pytz-2022.6/dist/pytz-2022.6-py3-none-any.whl
-PyYAML @ file:///build/source/dist/PyYAML-6.0-cp310-cp310-linux_x86_64.whl
-scikit-learn @ file:///build/scikit-learn-1.1.3/dist/scikit_learn-1.1.3-cp310-cp310-linux_x86_64.whl
-scipy @ file:///build/scipy-1.9.3/dist/scipy-1.9.3-cp310-cp310-linux_x86_64.whl
-seaborn @ file:///build/seaborn-0.12.1/dist/seaborn-0.12.1-py3-none-any.whl
-six @ file:///build/six-1.16.0/dist/six-1.16.0-py2.py3-none-any.whl
-SQLAlchemy @ file:///build/SQLAlchemy-1.4.41/dist/SQLAlchemy-1.4.41-cp310-cp310-linux_x86_64.whl
-threadpoolctl @ file:///build/source/dist/threadpoolctl-3.1.0-py3-none-any.whl
-tornado @ file:///build/tornado-6.2/dist/tornado-6.2-cp37-abi3-linux_x86_64.whl
-typing_extensions @ file:///build/typing_extensions-4.3.0/dist/typing_extensions-4.3.0-py3-none-any.whl
-virtualenv @ file:///build/virtualenv-20.16.5/dist/virtualenv-20.16.5-py3-none-any.whl
-watchdog @ file:///build/watchdog-2.1.9/dist/watchdog-2.1.9-py3-none-any.whl
-Werkzeug @ file:///build/Werkzeug-2.2.2/dist/Werkzeug-2.2.2-py3-none-any.whl
+asgiref 
+async
+Babel 
+backports
+certifi 
+click 
+colorama 
+cycler 
+defusedxml 
+distlib 
+filelock 
+Flask 
+Flask
+fonttools 
+greenlet 
+itsdangerous 
+Jinja2 
+joblib 
+kiwisolver 
+lz4 
+mariadb 
+MarkupSafe 
+matplotlib 
+mock 
+mysqlclient 
+numpy 
+olefile 
+packaging 
+pandas 
+pathtools 
+Pillow 
+platformdirs 
+pyparsing 
+python
+python
+pytz 
+PyYAML 
+scikit
+scipy 
+seaborn 
+six 
+SQLAlchemy 
+threadpoolctl 
+tornado 
+typing_extensions 
+virtualenv 
+watchdog 
+Werkzeug 
