@@ -56,7 +56,6 @@ def predict():
         pekerjaan=data("pekerjaan"),
     )
 
-    print("Ayaan teu euy",populate_data.nama)
     db.session.add(populate_data)
     db.session.commit()
 
