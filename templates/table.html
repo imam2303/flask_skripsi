@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Flower Class Prediction</title>
+    <link
+      href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+      rel="stylesheet"
+      id="bootstrap-css"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.datatables.net/1.13.1/css/dataTables.bootstrap4.min.css"
+    />
+  </head>
+
+  <body>
+    <div class="container-fluid contact-form rounded">
+      <div class="contact-image">
+        <img
+          src="https://image.ibb.co/kUagtU/rocket_contact.png"
+          alt="rocket_contact"
+        />
+      </div>
+      <a href="{{ url_for('home') }}">
+        <button class="btn btn-primary mb-3">Back</button>
+      </a>
+      <table id="table" class="table table-bordered table-striped">
+        <h1>Data Kelayakan</h1>
+        <thead class="alert alert-warning">
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Nama</th>
+            <th scope="col">Alamat</th>
+            <th scope="col">Jenis PMKS</th>
+            <th scope="col">Hubungan Dalam Keluarga</th>
+            <th scope="col">Jumlah Tanggungan Kepala Keluarga</th>
+            <th scope="col">Pendapatan Keluarga</th>
+            <th scope="col">Status Rumah</th>
+            <th scope="col">Pekerjaan</th>
+            <th scope="col">Layak</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for data in data %}
+          <tr>
+            <th scope="row">{{ data.id }}</th>
+            <td>{{ data.nama }}</td>
+            <td>{{ data.alamat }}</td>
+            <td>{{ data.jenis_pmks }}</td>
+            <td>
+              {% if data.hubungan_dlm_keluarga == 1 %}
+              <p>Anak</p>
+              {% elif data.hubungan_dlm_keluarga == 2 %}
+              <p>Bapak</p>
+              {% else %}
+              <p>Ibu</p>
+              {% endif %}
+            </td>
+            <td>{{ data.jml_tanggungan_kepala_keluarga }}</td>
+            <td>{{ data.pendapatan_keluarga }}</td>
+            <td>{{ data.status_rumah }}</td>
+            <td>{{ data.pekerjaan }}</td>
+            <td>
+              {{ data.layak | replace("[", "") | replace("]", "") | replace("'",
+              "") }}
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("#table").DataTable();
+      });
+    </script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.1/js/dataTables.bootstrap4.min.js"></script>
+  </body>
+</html>

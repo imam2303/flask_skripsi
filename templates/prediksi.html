@@ -46,22 +46,17 @@
               />
             </div>
             <div class="form-group">
-              <input
-                type="number"
-                name="jenis_pmks"
-                class="form-control"
-                placeholder="jenis_pmks"
-                required="required"
-              />
+              <select name="jenis_pmks" class="form-control">
+                <option value="1">Anak Dalam Distablitasan</option>
+                <option value="2">Anak Anjay</option>
+              </select>
             </div>
             <div class="form-group">
-              <input
-                type="number"
-                name="hubungan_dlm_keluarga"
-                class="form-control"
-                placeholder="hubungan_dlm_keluarga"
-                required="required"
-              />
+              <select name="hubungan_dlm_keluarga" class="form-control">
+                <option value="1">Anak</option>
+                <option value="2">Bapak</option>
+                <option value="3">Ibu</option>
+              </select>
             </div>
             <div class="form-group">
               <input
@@ -102,13 +97,6 @@
             <button type="submit" class="btn btn-primary btn-block btn-large">
               Predict
             </button>
-          </div>
-          <div class="col-md-6">
-            <h3>
-              Hasil Prediksi : <br />
-              {{ prediction_text | replace("[", "") | replace("]","") |
-              replace("'", "") }}
-            </h3>
           </div>
         </div>
       </form>

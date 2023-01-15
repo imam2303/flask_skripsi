@@ -1,15 +1,20 @@
 import numpy as np
 import pandas as pd
 from sklearn.naive_bayes import GaussianNB
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import create_engine
+from dotenv import load_dotenv
 import pickle
+import os
+import json
+
+load_dotenv()
 
 app = Flask(__name__)
 model = pickle.load(open("model.pkl", "rb"))
 
-app.config['SQLALCHEMY_DATABASE_URI'] = "mysql://root:@localhost:3306/dataprediksi"
+app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv("DATABASE_URL")
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db = SQLAlchemy(app)
@@ -33,6 +38,11 @@ class DataPrediksi(db.Model):
 def home():
     print("Konek teu nya ", db.session.execute('SELECT 1'))
     return render_template('prediksi.html')
+    
+@app.route("/table")
+def table():
+    data = DataPrediksi.query.all()
+    return render_template('table.html', data=data)
 
 @app.route("/predict", methods=["POST"])
 def predict():
@@ -60,8 +70,7 @@ def predict():
 
     db.session.add(populate_data)
     db.session.commit()
-
-    return render_template("prediksi.html", prediction_text = "{}".format(prediction))
+    return redirect("/table")
 
 if __name__ == "__main__":
     app.run(debug=True)

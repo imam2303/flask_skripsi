@@ -9,7 +9,6 @@ in pkgs.mkShell {
     pkgs.python310Packages.click
     pkgs.python310Packages.cycler
     pkgs.python310Packages.colorama
-    #pkgs.python310Packages.contourpy
     pkgs.python310Packages.greenlet
     pkgs.python310Packages.itsdangerous
     pkgs.python310Packages.joblib
@@ -31,6 +30,7 @@ in pkgs.mkShell {
     pkgs.python310Packages.werkzeug
     pkgs.python310Packages.mariadb
     pkgs.python310Packages.mysqlclient
+    pkgs.python310Packages.python-dotenv
   ];
   shellHook = ''
     export PIP_PREFIX=$(pwd)/_build/pip_packages
