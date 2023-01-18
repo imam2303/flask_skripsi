@@ -44,3 +44,4 @@ watchdog
 Werkzeug 
 scikit-learn
 flask_sqlalchemy
+python-dotenv

@@ -46,16 +46,28 @@
               />
             </div>
             <div class="form-group">
-              <select name="jenis_pmks" class="form-control">
-                <option value="1">Anak Dalam Distablitasan</option>
-                <option value="2">Anak Anjay</option>
+              <select name="jenis_pmks" class="form-control" required>
+                <option value="">-- Pilih Jenis PMKS --</option>
+                <option value="0">Anak Dalam Kedistabilitasan</option>
+                <option value="1">Bekas Warga Binaan Lembaga Kemasyarakatan</option>
+                <option value="2">Fakir Miskin</option>
+                <option value="3">Kelompok Minoritas</option>
+                <option value="4">Keluarga Bermasalah Sosial Psikologi</option>
+                <option value="5">Keluarga Berumah Tak Layak Huni</option>
+                <option value="6">Korban Penyalahgunaan Napza</option>
+                <option value="7">Lansia Terlantar</option>
+                <option value="8">Pemulung</option>
+                <option value="9">Penyandang Disabilitas</option>
+                <option value="10">Perempuan Rawan Sosial Ekonomi</option>
+                <option value="11">Tuna Susila</option>
               </select>
             </div>
             <div class="form-group">
-              <select name="hubungan_dlm_keluarga" class="form-control">
-                <option value="1">Anak</option>
-                <option value="2">Bapak</option>
-                <option value="3">Ibu</option>
+              <select name="hubungan_dlm_keluarga" class="form-control" required>
+                <option value="">-- Hubungan Dalam Keluarga --</option>
+                <option value="0">Anak</option>
+                <option value="1">Ibu</option>
+                <option value="2">Kepala Keluarga</option>
               </select>
             </div>
             <div class="form-group">
@@ -63,36 +75,39 @@
                 type="number"
                 name="jml_tanggungan_kepala_keluarga"
                 class="form-control"
-                placeholder="jml_tanggungan_kepala_keluarga"
+                placeholder="Jumlah Tanggungan Kepala Keluarga"
                 required="required"
               />
             </div>
             <div class="form-group">
-              <input
-                type="number"
-                name="pendapatan_keluarga"
-                class="form-control"
-                placeholder="pendapatan_keluarga"
-                required="required"
-              />
+              <select name="pendapatan_keluarga" class="form-control" required>
+                <option value="">-- Pendapatan Keluarga --</option>
+                <option value="2">Kurang (< Rp. 1.000.000)</option>
+                <option value="1">Cukup (Rp. 1.000.000 – Rp. 2.000.000)</option>
+                <option value="0">Baik (Rp. 2.000.000 – Rp. 3.000.000)</option>
+                <option value="3">Sangat Baik (> Rp. 3.000.000)</option>
+              </select>
             </div>
             <div class="form-group">
-              <input
-                type="number"
-                name="status_rumah"
-                class="form-control"
-                placeholder="status_rumah"
-                required="required"
-              />
+              <select name="status_rumah" class="form-control" required>
+                <option value="">-- Status Rumah --</option>
+                <option value="0">Kontrakan</option>
+                <option value="1">Milik Sendiri</option>
+              </select>
             </div>
             <div class="form-group">
-              <input
-                type="number"
-                name="pekerjaan"
-                class="form-control"
-                placeholder="pekerjaan"
-                required="required"
-              />
+              <select name="pekerjaan" class="form-control" required>
+                <option value="">-- Pekerjaan --</option>
+                <option value="0">ASN</option>
+                <option value="1">Buruh</option>
+                <option value="2">IRT</option>
+                <option value="3">Karyawan Swasta</option>
+                <option value="4">Pelajar</option>
+                <option value="5">Pemulung</option>
+                <option value="6">Pensiunan</option>
+                <option value="7">Tidak Bekerja</option>
+                <option value="8">Wiraswasta</option>
+              </select>
             </div>
             <button type="submit" class="btn btn-primary btn-block btn-large">
               Predict
