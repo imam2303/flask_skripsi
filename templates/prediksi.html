@@ -24,7 +24,7 @@
         />
       </div>
       <form action="{{ url_for('predict')}}" method="post">
-        <h3>PMKS Prediction</h3>
+        <h3>Prediksi Perpanjangan Kontrak</h3>
         <div class="row">
           <div class="col-md-6">
             <div class="form-group">
@@ -37,77 +37,100 @@
               />
             </div>
             <div class="form-group">
+              <select name="jenis_kelamin" class="form-control" required>
+                <option value="">-- Pilih Jenis Kelamin --</option>
+                <option>Laki - Laki</option>
+                <option>Perempuan</option>
+              </select>
+            </div>
+            <div class="form-group">
               <input
                 type="text"
-                name="alamat"
+                name="tempat_lahir"
                 class="form-control"
-                placeholder="Masukan Alamat Anda"
+                placeholder="Tempat Lahir Anda"
                 required="required"
               />
             </div>
             <div class="form-group">
-              <select name="jenis_pmks" class="form-control" required>
-                <option value="">-- Pilih Jenis PMKS --</option>
-                <option value="0">Anak Dalam Kedistabilitasan</option>
-                <option value="1">Bekas Warga Binaan Lembaga Kemasyarakatan</option>
-                <option value="2">Fakir Miskin</option>
-                <option value="3">Kelompok Minoritas</option>
-                <option value="4">Keluarga Bermasalah Sosial Psikologi</option>
-                <option value="5">Keluarga Berumah Tak Layak Huni</option>
-                <option value="6">Korban Penyalahgunaan Napza</option>
-                <option value="7">Lansia Terlantar</option>
-                <option value="8">Pemulung</option>
-                <option value="9">Penyandang Disabilitas</option>
-                <option value="10">Perempuan Rawan Sosial Ekonomi</option>
-                <option value="11">Tuna Susila</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <select name="hubungan_dlm_keluarga" class="form-control" required>
-                <option value="">-- Hubungan Dalam Keluarga --</option>
-                <option value="0">Anak</option>
-                <option value="1">Ibu</option>
-                <option value="2">Kepala Keluarga</option>
+              <select name="pendidikan" class="form-control" required>
+                <option value="">-- Pilih pendidikan anda --</option>
+                <option>S1</option>
+                <option>SMK</option>
+                <option>SMA</option>
               </select>
             </div>
             <div class="form-group">
               <input
                 type="number"
-                name="jml_tanggungan_kepala_keluarga"
+                name="no_hp"
                 class="form-control"
-                placeholder="Jumlah Tanggungan Kepala Keluarga"
+                placeholder="Masukan No HP anda"
                 required="required"
               />
             </div>
             <div class="form-group">
-              <select name="pendapatan_keluarga" class="form-control" required>
-                <option value="">-- Pendapatan Keluarga --</option>
-                <option value="2">Kurang (< Rp. 1.000.000)</option>
-                <option value="1">Cukup (Rp. 1.000.000 – Rp. 2.000.000)</option>
-                <option value="0">Baik (Rp. 2.000.000 – Rp. 3.000.000)</option>
-                <option value="3">Sangat Baik (> Rp. 3.000.000)</option>
-              </select>
+              <input
+              type="text"
+              name="jabatan"
+              class="form-control"
+              placeholder="Masukan Jabatan Anda"
+              required="required"
+            />
             </div>
             <div class="form-group">
-              <select name="status_rumah" class="form-control" required>
-                <option value="">-- Status Rumah --</option>
-                <option value="0">Kontrakan</option>
-                <option value="1">Milik Sendiri</option>
-              </select>
+              <input
+              type="text"
+              name="penempatan"
+              class="form-control"
+              placeholder="Masukan Penempatan Anda"
+              required="required"
+            />
             </div>
             <div class="form-group">
-              <select name="pekerjaan" class="form-control" required>
-                <option value="">-- Pekerjaan --</option>
-                <option value="0">ASN</option>
-                <option value="1">Buruh</option>
-                <option value="2">IRT</option>
-                <option value="3">Karyawan Swasta</option>
-                <option value="4">Pelajar</option>
-                <option value="5">Pemulung</option>
-                <option value="6">Pensiunan</option>
-                <option value="7">Tidak Bekerja</option>
-                <option value="8">Wiraswasta</option>
-              </select>
+              <input
+              type="text"
+              name="lama_kerja"
+              class="form-control"
+              placeholder="Masukan Lama Kerja"
+              required="required"
+              />
+            </div>
+            <div class="form-group">
+              <input
+              type="number"
+              name="kehadiran"
+              class="form-control"
+              placeholder="Masukan Nilai Kehadiran"
+              required="required"
+              />
+            </div>
+            <div class="form-group">
+              <input
+              type="number"
+              name="sikap"
+              class="form-control"
+              placeholder="Masukan Nilai Sikap"
+              required="required"
+              />
+            </div>
+            <div class="form-group">
+              <input
+              type="number"
+              name="tanggung_jawab"
+              class="form-control"
+              placeholder="Masukan Nilai Tanggung Jawab"
+              required="required"
+              />
+            </div>
+            <div class="form-group">
+              <input
+              type="number"
+              name="pencapaian"
+              class="form-control"
+              placeholder="Masukan Nilai Pencapaian"
+              required="required"
+              />
             </div>
             <button type="submit" class="btn btn-primary btn-block btn-large">
               Predict

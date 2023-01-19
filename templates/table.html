@@ -35,14 +35,18 @@
           <tr>
             <th scope="col">Id</th>
             <th scope="col">Nama</th>
-            <th scope="col">Alamat</th>
-            <th scope="col">Jenis PMKS</th>
-            <th scope="col">Hubungan Dalam Keluarga</th>
-            <th scope="col">Jumlah Tanggungan Kepala Keluarga</th>
-            <th scope="col">Pendapatan Keluarga</th>
-            <th scope="col">Status Rumah</th>
-            <th scope="col">Pekerjaan</th>
-            <th scope="col">Layak</th>
+            <th scope="col">Jenis_kelamin</th>
+            <th scope="col">Tempat_lahir</th>
+            <th scope="col">Pendidikan</th>
+            <th scope="col">No HP</th>
+            <th scope="col">Jabatan</th>
+            <th scope="col">Penempatan</th>
+            <th scope="col">Lama Kerja</th>
+            <th scope="col">Kehadiran</th>
+            <th scope="col">Sikap</th>
+            <th scope="col">Tanggung Jawab</th>
+            <th scope="col">Pencapaian</th>
+            <th scope="col">Keputusan</th>
           </tr>
         </thead>
         <tbody>
@@ -50,23 +54,19 @@
           <tr>
             <th scope="row">{{ data.id }}</th>
             <td>{{ data.nama }}</td>
-            <td>{{ data.alamat }}</td>
-            <td>{{ data.jenis_pmks }}</td>
+            <td>{{ data.jenis_kelamin }}</td>
+            <td>{{ data.tempat_lahir }}</td>
+            <td>{{ data.pendidikan }}</td>
+            <td>{{ data.no_hp }}</td>
+            <td>{{ data.jabatan }}</td>
+            <td>{{ data.penempatan }}</td>
+            <td>{{ data.lama_kerja }}</td>
+            <td>{{ data.kehadiran }}</td>
+            <td>{{ data.sikap }}</td>
+            <td>{{ data.tanggung_jawab }}</td>
+            <td>{{ data.pencapaian }}</td>
             <td>
-              {% if data.hubungan_dlm_keluarga == 1 %}
-              <p>Anak</p>
-              {% elif data.hubungan_dlm_keluarga == 2 %}
-              <p>Bapak</p>
-              {% else %}
-              <p>Ibu</p>
-              {% endif %}
-            </td>
-            <td>{{ data.jml_tanggungan_kepala_keluarga }}</td>
-            <td>{{ data.pendapatan_keluarga }}</td>
-            <td>{{ data.status_rumah }}</td>
-            <td>{{ data.pekerjaan }}</td>
-            <td>
-              {{ data.layak | replace("[", "") | replace("]", "") | replace("'",
+              {{ data.keputusan | replace("[", "") | replace("]", "") | replace("'",
               "") }}
             </td>
           </tr>

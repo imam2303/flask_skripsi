@@ -1,6 +1,6 @@
 import numpy as np
 import pandas as pd
-from sklearn.naive_bayes import GaussianNB
+from sklearn.neighbors import KNeighborsClassifier
 from flask import Flask, render_template, request, redirect
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import create_engine
@@ -12,26 +12,29 @@ import json
 load_dotenv()
 
 app = Flask(__name__)
-model = pickle.load(open("model.pkl", "rb"))
+silpi = pickle.load(open("silpi.pkl", "rb"))
 
 app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv("DATABASE_URL")
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db = SQLAlchemy(app)
 
-# db.create_all()
+#db.create_all()
 
 class DataPrediksi(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     nama = db.Column(db.String(30), nullable=False)
-    layak = db.Column(db.String(20), nullable=False)
-    alamat = db.Column(db.String(50), nullable=False)
-    jenis_pmks = db.Column(db.Integer, nullable=False)
-    hubungan_dlm_keluarga = db.Column(db.Integer, nullable=False)
-    jml_tanggungan_kepala_keluarga = db.Column(db.Integer, nullable=False)
-    pendapatan_keluarga = db.Column(db.Integer, nullable=False)
-    status_rumah = db.Column(db.Integer, nullable=False)
-    pekerjaan = db.Column(db.Integer, nullable=False)
+    jenis_kelamin = db.Column(db.String(10), nullable=False)
+    tempat_lahir = db.Column(db.String(15), nullable=False)
+    pendidikan = db.Column(db.String(4), nullable=False)
+    no_hp = db.Column(db.Integer, nullable=False)
+    jabatan = db.Column(db.String(20), nullable=False)
+    penempatan = db.Column(db.String(20), nullable=False)
+    lama_kerja = db.Column(db.String(20), nullable=False)
+    kehadiran = db.Column(db.Integer, nullable=False)
+    sikap = db.Column(db.Integer, nullable=False)
+    tanggung_jawab = db.Column(db.Integer, nullable=False)
+    pencapaian = db.Column(db.Integer, nullable=False)
 
 
 @app.route("/")
@@ -48,24 +51,27 @@ def table():
 def predict():
     data = request.form.get
     fitur = [np.array([
-        int(data("jenis_pmks")),
-        int(data("hubungan_dlm_keluarga")),
-        int(data("jml_tanggungan_kepala_keluarga")),
-        int(data("pendapatan_keluarga")),
-        int(data("status_rumah")),
-        int(data("pekerjaan"))
+        int(data("kehadiran")),
+        int(data("sikap")),
+        int(data("tanggung_jawab")),
+        int(data("pencapaian"))
+    
     ])]
-    prediction = model.predict(fitur)
+    prediction = silpi.predict(fitur)
     populate_data = DataPrediksi(
         nama=data("nama"),
-        alamat=data("alamat"),
-        jenis_pmks=data("jenis_pmks"),
-        hubungan_dlm_keluarga=data("hubungan_dlm_keluarga"),
-        jml_tanggungan_kepala_keluarga=data("jml_tanggungan_kepala_keluarga"),
-        pendapatan_keluarga=data("pendapatan_keluarga"),
-        status_rumah=data("status_rumah"),
-        pekerjaan=data("pekerjaan"),
-        layak=prediction
+        jenis_kelamin=data("jenis_kelamin"),
+        tempat_lahir=data("tempat_lahir"),
+        pendidikan=data("pendidikan"),
+        no_hp=data("no_hp"),
+        jabatan=data("jabatan"),
+        penempatan=data("penempatan"),
+        lama_kerja=data("lama_kerja"),
+        kehadiran=data("kehadiran"),
+        sikap=data("sikap"),
+        tanggung_jawab=data("tanggung_jawab"),
+        pencapaian=data("pencapaian"),
+        keputusan=prediction
     )
 
     db.session.add(populate_data)
