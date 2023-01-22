@@ -18,7 +18,7 @@
     />
   </head>
 
-  <body>
+  <tbody>
     <div class="container-fluid contact-form rounded">
       <div class="contact-image">
         <img
@@ -35,38 +35,98 @@
           <tr>
             <th scope="col">Id</th>
             <th scope="col">Nama</th>
-            <th scope="col">Jenis_kelamin</th>
-            <th scope="col">Tempat_lahir</th>
-            <th scope="col">Pendidikan</th>
-            <th scope="col">No HP</th>
-            <th scope="col">Jabatan</th>
-            <th scope="col">Penempatan</th>
-            <th scope="col">Lama Kerja</th>
-            <th scope="col">Kehadiran</th>
-            <th scope="col">Sikap</th>
-            <th scope="col">Tanggung Jawab</th>
-            <th scope="col">Pencapaian</th>
-            <th scope="col">Keputusan</th>
+            <th scope="col">Alamat</th>
+            <th scope="col">Jenis PMKS</th>
+            <th scope="col">Hubungan Dalam Keluarga</th>
+            <th scope="col">Jumlah Tanggungan Kepala Keluarga</th>
+            <th scope="col">Pendapatan Keluarga</th>
+            <th scope="col">Status Rumah</th>
+            <th scope="col">Pekerjaan</th>
+            <th scope="col">Layak</th>
           </tr>
         </thead>
-        <tbody>
+        <body>
           {% for data in data %}
           <tr>
             <th scope="row">{{ data.id }}</th>
             <td>{{ data.nama }}</td>
-            <td>{{ data.jenis_kelamin }}</td>
-            <td>{{ data.tempat_lahir }}</td>
-            <td>{{ data.pendidikan }}</td>
-            <td>{{ data.no_hp }}</td>
-            <td>{{ data.jabatan }}</td>
-            <td>{{ data.penempatan }}</td>
-            <td>{{ data.lama_kerja }}</td>
-            <td>{{ data.kehadiran }}</td>
-            <td>{{ data.sikap }}</td>
-            <td>{{ data.tanggung_jawab }}</td>
-            <td>{{ data.pencapaian }}</td>
+            <td>{{ data.alamat }}</td>
             <td>
-              {{ data.keputusan | replace("[", "") | replace("]", "") | replace("'",
+              {% if data.jenis_pmks == 0 %}
+              <p>Anak Dalam Kedistabilitasan</p>
+              {% elif data.jenis_pmks == 1 %}
+              <p>Bekas Warga Binaan Lembaga Pemasyarakatan</p>
+              {% elif data.jenis_pmks == 2 %}
+              <p>Fakir Miskin</p>
+              {% elif data.jenis_pmks == 3 %}
+              <p>Kelompok Minoritas</p>
+              {% elif data.jenis_pmks == 4 %}
+              <p>Keluarga Bermasalah Sosial Psikologi</p>
+              {% elif data.jenis_pmks == 5 %}
+              <p>Keluarga Berumah Tak Layak Huni</p>
+              {% elif data.jenis_pmks == 6 %}
+              <p>Korban Pernyalahgunaan Napza</p>
+              {% elif data.jenis_pmks == 7 %}
+              <p>Lansia Terlantar</p>
+              {% elif data.jenis_pmks == 8 %}
+              <p>Pemulung</p>
+              {% elif data.jenis_pmks == 9 %}
+              <p>Penyandang Disabilitas</p>
+              {% elif data.jenis_pmks == 10 %}
+              <p>Perempuan Rawan Sosial Ekonomi</p>
+              {% else %}
+              <p>Tuna Susila</p>
+              {% endif %}
+            </td>
+            <td>
+              {% if data.hubungan_dlm_keluarga == 0 %}
+              <p>Anak</p>
+              {% elif data.hubungan_dlm_keluarga == 1 %}
+              <p>Ibu</p>
+              {% else %}
+              <p>Kepala Keluarga</p>
+              {% endif %}
+            </td>
+            <td>{{ data.jml_tanggungan_kepala_keluarga }}</td>
+            <td>
+              {% if data.pendapatan_keluarga == 0 %}
+              <p>Baik</p>
+              {% elif data.pendapatan_keluarga == 1 %}
+              <p>Cukup</p>
+              {% elif data.pendapatan_keluarga == 2 %}
+              <p>Kurang</p>
+              {% else %}
+              <p>Sangat Baik</p>
+              {% endif %}
+            </td>
+            <td>{% if data.status_rumah == 0 %}
+              <p>Kontrakan</p>
+              {% else %}
+              <p>Milik Sendiri</p>
+              {% endif %}
+            </td>
+            <td>{% if data.pekerjaan == 0 %}
+              <p>ASN</p>
+              {% elif data.pekerjaan == 1 %}
+              <p>Buruh</p>
+              {% elif data.pekerjaan == 2 %}
+              <p>IRT</p>
+              {% elif data.pekerjaan == 3 %}
+              <p>Karyawan Swasta</p>
+              {% elif data.pekerjaan == 4 %}
+              <p>pelajar</p>
+              {% elif data.pekerjaan == 5 %}
+              <p>Pemulung</p>
+              {% elif data.pekerjaan == 6 %}
+              <p>Pensiunan</p>
+              {% elif data.pekerjaan == 7 %}
+              <p>Tidak Bekerja</p>
+              {% else %}
+              <p>Wiraswasta</p>
+              {% endif %}
+            </td>
+            <td>
+              {{ data.layak | replace("[", "") | replace("]", "") | replace("'",
               "") }}
             </td>
           </tr>
